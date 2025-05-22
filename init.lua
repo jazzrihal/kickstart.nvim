@@ -241,6 +241,14 @@ require('lazy').setup({
     end,
   },
 
+  -- Visualise and manipulate the undo tree
+  {
+    'mbbill/undotree',
+    config = function()
+      vim.keymap.set('n', '<leader><F5>', vim.cmd.UndotreeToggle, { desc = 'Toggle undo tree' })
+    end,
+  },
+
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
   -- This is often very useful to both group configuration, as well as handle
