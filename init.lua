@@ -205,31 +205,19 @@ require('lazy').setup({
     opts = {},
   },
 
-  -- Mark and switch between files
+  -- Bookmarks
   {
-    'ThePrimeagen/harpoon',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    opts = {},
-    config = function()
-      local mark = require 'harpoon.mark'
-      local ui = require 'harpoon.ui'
-
-      vim.keymap.set('n', '<leader>a', mark.add_file, { desc = '[A]dd file in Harpoon' })
-      vim.keymap.set('n', '<C-e>', ui.toggle_quick_menu, { desc = 'Toggle Harpoon quick menu' })
-
-      vim.keymap.set('n', '<C-h>', function()
-        ui.nav_file(1)
-      end, { desc = 'Toggle Harpoon quick menu' })
-      vim.keymap.set('n', '<C-t>', function()
-        ui.nav_file(2)
-      end, { desc = 'Toggle Harpoon quick menu' })
-      vim.keymap.set('n', '<C-n>', function()
-        ui.nav_file(3)
-      end, { desc = 'Toggle Harpoon quick menu' })
-      vim.keymap.set('n', '<C-s>', function()
-        ui.nav_file(4)
-      end, { desc = 'Toggle Harpoon quick menu' })
-    end,
+    'otavioschwanck/arrow.nvim',
+    dependencies = {
+      { 'nvim-tree/nvim-web-devicons' },
+      -- or if using `mini.icons`
+      -- { "echasnovski/mini.icons" },
+    },
+    opts = {
+      show_icons = true,
+      leader_key = ';', -- Recommended to be a single key
+      buffer_leader_key = 'm', -- Per Buffer Mappings
+    },
   },
 
   -- Auto close or rename HTML tags
