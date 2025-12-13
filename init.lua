@@ -205,6 +205,16 @@ require('lazy').setup({
     opts = {},
   },
 
+  -- Clangd Protocol Extension
+  {
+    'p00f/clangd_extensions.nvim',
+  },
+
+  -- Context
+  {
+    'wellle/context.vim',
+  },
+
   -- Bookmarks
   {
     'otavioschwanck/arrow.nvim',
